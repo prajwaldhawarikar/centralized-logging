@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package log;
+
+message Log {
+    string namespace = 1;
+    string data = 2;
+    int64 timestamp = 3;
+}
+
+message SendLogResponse {
+    string ack = 1;
+}
+
+service LogService {
+    rpc sendLog(Log) returns (SendLogResponse) {}
+}
