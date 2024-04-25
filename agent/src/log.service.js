@@ -22,16 +22,6 @@ class LogService {
       grpc.credentials.createInsecure()
     );
   }
-  sendLog(namespace, log) {
-    // TODO: Have retry logic
-    this.client.sendLog({ namespace, data: log }, (err, res) => {
-      if (err) {
-        console.log(response);
-      } else {
-        console.log(res);
-      }
-    });
-  }
 }
 
 module.exports = new LogService();
