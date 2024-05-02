@@ -17,6 +17,7 @@ class LogService {
 
     const protoPackage = grpc.loadPackageDefinition(packageDefinition);
 
+    // TODO: Read the host from env vars or input
     this.client = new protoPackage.log.LogService(
       'localhost:50051',
       grpc.credentials.createInsecure()
